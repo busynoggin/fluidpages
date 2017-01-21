@@ -54,5 +54,5 @@ $EM_CONF[$_EXTKEY] = array (
       array(
           'FluidTYPO3\\Fluidpages\\Tests\\' => 'Tests/',
       ),
-  ),
+  )
 );
