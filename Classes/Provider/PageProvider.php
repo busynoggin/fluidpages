@@ -174,7 +174,7 @@ class PageProvider extends AbstractProvider implements ProviderInterface
         $cacheId = 'fluidpages-' . md5($row['uid'] . '/' . $row['pid'] . '/' . $row[$this->getFieldName($row)]);
         $persistentCache = $this->getFluxCache();
         $runtimeCache = $this->getRuntimeCache();
-        $cachedPersistent = $persistentCache->get($cacheId) ?? $runtimeCache->get($cacheId);
+        $cachedPersistent = $persistentCache->get($cacheId) ? $persistentCache->get($cacheId) : $runtimeCache->get($cacheId);
         if ($cachedPersistent) {
             return $cachedPersistent;
         }
